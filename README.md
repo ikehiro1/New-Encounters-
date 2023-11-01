@@ -1,4 +1,4 @@
-# New Encounters
+# New-Encounters-
 ​
 ## サイト概要
 ### サイトテーマ
