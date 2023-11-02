@@ -10,5 +10,8 @@ class User < ApplicationRecord
   has_many :rooms
   has_many :chats, through: :chat_rooms
 
-  enum role: {actor:0, scout:1, admin:2}
+  enum role: {役者:0, アーティスト:1, タレント:2, 芸人:3}
+  
+  
+  
 end

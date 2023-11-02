@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function SignUp() {
   return (
-    <div>明日天気になれ</div>
+    <div>明日になれ</div>
   )
 }
 export default SignUp;
