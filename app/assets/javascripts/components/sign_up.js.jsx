@@ -1,9 +1,9 @@
-
-import { createRoot } from 'react-dom/client';
+import { FormFor, Field, Submit } from 'react-form';
+import axios from 'axios';
 
 function SignUp() {
   return (
-    <div>Hello World!!</div>
+    <div>明日天気になれ</div>
   )
 }
 export default SignUp;
