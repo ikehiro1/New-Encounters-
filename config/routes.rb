@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  
+  root to: 'home#top'
   
   resources :my_prs, only:[:index,:show,:new,:edit,:update,:destroy]
   resources :histories, only:[:show,:new,:edit,:update,:destroy]
@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   get 'announces/index_all'
   get 'users/leave'
   get 'homes/top'
+
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
