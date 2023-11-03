@@ -1,3 +1,4 @@
+@import "mixin";
 .header {
     position: fixed;
     top: 0;
@@ -8,7 +9,7 @@
     align-items: center;
     transition: all 1.5s;
     box-shadow: 0 0 20px #333;
-    background: linear-gradient(45deg, #66797b, #7daada);
+    background: linear-gradient(45deg, #66797b, #000000);
     &:hover {
         background: linear-gradient(45deg, #81a8ad, #ffa500ed);
     }
@@ -19,9 +20,8 @@
         align-items: center;
         justify-content: center;
         text-underline-offset: 5px;
-        text-decoration: underline dashed #ffff 2px;
+        text-decoration: none;
         &:hover {
-            text-decoration: underline solid #ffff 2px;
             animation: blinkingText 1.5s linear infinite;
         }
         @keyframes blinkingText {
@@ -43,6 +43,7 @@
             color: #ffffff;
             display: flex;
             align-items: center;
+            font-family: math;
         }
     }
 }
