@@ -7,6 +7,7 @@ class CreateAnnounces < ActiveRecord::Migration[6.1]
       t.text :explanation
       t.string :title
       t.string :img　#画像や動画を挿しこめる
+      t.bigint :user_id
       
       t.timestamps
     end

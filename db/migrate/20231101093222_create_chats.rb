@@ -5,6 +5,8 @@ class CreateChats < ActiveRecord::Migration[6.1]
       #コミュニティ名（舞台、声優、映像、バンド、歌手、アイドル、タレント、芸人）
       t.string :community_name
       t.string :chat_summray #投稿内容
+      t.bigint :user_id
+      t.bigint :room_id
       
       t.timestamps
     end
