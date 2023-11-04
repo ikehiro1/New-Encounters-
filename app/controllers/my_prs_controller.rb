@@ -1,5 +1,6 @@
 class MyPrsController < ApplicationController
   def index
+    #user.find(params[:id])
   end
 
   def show

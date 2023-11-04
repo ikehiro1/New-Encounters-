@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   def show
+    user_data = User.find(params[:id])
+    @profile_data = [
+        "user_data" => [user_data][0],
+      ]
   end
 
   def new
