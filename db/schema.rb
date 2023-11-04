@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2023_11_01_095540) do
     t.text "explanation"
     t.string "title"
     t.string "img　"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -25,12 +26,15 @@ ActiveRecord::Schema.define(version: 2023_11_01_095540) do
   create_table "chats", force: :cascade do |t|
     t.string "community_name"
     t.string "chat_summray"
+    t.bigint "user_id"
+    t.bigint "room_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "histories", force: :cascade do |t|
     t.text "history"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -39,11 +43,13 @@ ActiveRecord::Schema.define(version: 2023_11_01_095540) do
     t.string "pr_title"
     t.text "pr_explanation"
     t.string "pr_movie"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "rooms", force: :cascade do |t|
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
