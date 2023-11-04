@@ -1,7 +1,3 @@
-import axios from 'axios';
-
-
-
 function Top() {
   return (
     <div>
@@ -10,7 +6,6 @@ function Top() {
   )
 }
   
-export default Top;
 
 
 
