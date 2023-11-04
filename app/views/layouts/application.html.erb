@@ -14,8 +14,9 @@
 
   <body>
     <%= react_component('Header') %>
-   
-    
+    <% if user_signed_in? %>
+    <%= react_component('Footer', { currentUserId: current_user.id }) %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
