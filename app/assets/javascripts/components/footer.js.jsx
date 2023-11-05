@@ -1,7 +1,6 @@
 function Footer(response) {
     const userLink = `/users/${response["currentUserId"]}`;
     const userLogOutValue = response["logOutValue"];
-    console.log(response["logOutValue"])
     const animationStatus = sessionStorage.getItem("Animation");
     const removeAnimationStatus = () => {
       sessionStorage.removeItem("Animation");
