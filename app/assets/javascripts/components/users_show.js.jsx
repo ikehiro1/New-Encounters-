@@ -1,17 +1,20 @@
-function UsersShow(profileData) {
-  const userData = profileData["profileData"][0]["user_data"]
+function UsersShow(response) {
+  const userData = response["profileData"][0]["user_data"]
   const userId = userData["id"]
   const historyLink = `/histories/${userId}`;
   const userEditLink = `/users/${userId}/edit`;
   console.log(userEditLink)
    return (
-    <div>
+    <div className="profile">
       <h1>-My Page-</h1>
-        画像
-        名前
-        性別
-        生年月日
-        趣味<br/>
+       
+        <div>名前</div> 
+          <p>{userData["name"]}</p>
+        <div>entertainer</div>
+          {userData["role"]}
+        <div>生年月日</div>
+          <p>{userData["birthday"]}</p>
+        <div>趣味</div>
         
         <a href={historyLink}>　
           <b>My History</b>

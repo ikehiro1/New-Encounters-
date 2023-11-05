@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @profile_data = [
         "user_data" => [user_data][0],
       ]
+      
   end
 
   def new
