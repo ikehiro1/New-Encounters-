@@ -4,3 +4,25 @@
 .profile{
     text-align: center;
 }
+.opening-animation {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  font-weight: 400;
+  color: aliceblue;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease-in-out;
+  background-color: #009687;
+  animation: openingAnimation 1s forwards;
+  @keyframes openingAnimation {
+    from {
+      display: flex;
+      height: 100vh;
+    }
+    to {
+      height: 0vh;
+      display: none;
+    }
+  }
+}
