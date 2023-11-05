@@ -1,5 +1,5 @@
-function Footer(currentUserId) {
-    const userLink = `/users/${currentUserId["currentUserId"]}`;
+function Footer(response) {
+    const userLink = `/users/${response["currentUserId"]}`;
     console.log(userLink)
   return (
     <div className="footer">
