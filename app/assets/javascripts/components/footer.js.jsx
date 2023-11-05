@@ -2,6 +2,10 @@ function Footer(response) {
     const userLink = `/users/${response["currentUserId"]}`;
     const userLogOutValue = response["logOutValue"];
     console.log(response["logOutValue"])
+    const animationStatus = sessionStorage.getItem("Animation");
+    const removeAnimationStatus = () => {
+      sessionStorage.removeItem("Animation");
+    }
   return (
     <div className="footer">
       <ul>
@@ -17,7 +21,7 @@ function Footer(response) {
         <li>
           <form className="button_to" method="post" action="/users/sign_out">
               <input type="hidden" name="_method" value="delete" autoComplete="off" />
-              <button type="submit"><p className="fa-solid fa-right-from-bracket">exit</p></button>
+              <button onClick={removeAnimationStatus} type="submit"><p className="fa-solid fa-right-from-bracket">exit</p></button>
               <input type="hidden" name="authenticity_token" value={userLogOutValue} autoComplete="off" />
           </form>
         </li>

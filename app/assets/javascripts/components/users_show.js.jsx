@@ -4,6 +4,7 @@ function UsersShow(response) {
   const historyLink = `/histories/${userId}`;
   const userEditLink = `/users/${userId}/edit`;
   console.log(userEditLink)
+  sessionStorage.setItem("Animation", "Already");
    return (
     <div className="profile">
       <h1>-My Page-</h1>
