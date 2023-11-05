@@ -11,7 +11,7 @@ function UsersShow(response) {
         <div>名前</div> 
           <p>{userData["name"]}</p>
         <div>entertainer</div>
-          {userData["role"]}
+          <p>{userData["role"]}</p>
         <div>生年月日</div>
           <p>{userData["birthday"]}</p>
         <div>趣味</div>

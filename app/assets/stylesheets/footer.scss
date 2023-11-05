@@ -21,5 +21,17 @@
         text-align: center;
       }
     }
+    > li {
+      > form {
+        > button {
+          background-color: unset;
+          border: none;
+          > p {
+            display: grid;
+            color: white;
+          }
+        }
+      }
+    }
   }
 }
