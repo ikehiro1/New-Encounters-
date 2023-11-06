@@ -9,13 +9,13 @@ function Footer(response) {
     <div className="footer">
       <ul>
         <a href={userLink}>
-          <li><i className="fa-solid fa-user"></i><span>mypage</span></li>
+          <li><i className="fa-solid fa-user"></i><span>MYPAGE</span></li>
         </a>
         <a href="/communities">
-          <li><i className="fa-solid fa-user-group"></i><span>communities</span></li>
+          <li><i className="fa-solid fa-user-group"></i><span>COMMUNITIES</span></li>
         </a>
         <a href="/announces">
-          <li><i className="fa-solid fa-bullhorn"></i><span>announces</span></li>
+          <li><i className="fa-solid fa-bullhorn"></i><span>ANNOUNCES</span></li>
         </a>
         <li>
           <form className="button_to" method="post" action="/users/sign_out">
