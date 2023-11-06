@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'homes#top'
+  root to: 'users#show'
   
   resources :my_prs, only:[:index,:show,:new,:edit,:update,:destroy]
   resources :histories, only:[:show,:new,:edit,:update,:destroy]

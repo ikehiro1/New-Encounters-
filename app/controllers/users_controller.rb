@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   def show
-    user_data = User.find(params[:id])
+    user_data = User.find(current_user.id)
+    #user_data = User.find(params[:id])
     @profile_data = [
         "user_data" => [user_data][0],
       ]
-      
   end
 
   def new
