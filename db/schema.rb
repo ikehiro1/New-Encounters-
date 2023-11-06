@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2023_11_01_095540) do
     t.string "birthday"
     t.string "provider"
     t.integer "role"
+    t.text "history"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true

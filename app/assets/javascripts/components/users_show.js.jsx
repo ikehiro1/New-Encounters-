@@ -26,7 +26,8 @@ function UsersShow(response) {
           <p>{userData["role"]}</p>
           <div>生年月日</div>
           <p>{userData["birthday"]}</p>
-          <div>趣味</div>
+          <div>芸歴</div>
+          <p>{userData["history"]}</p>
           <a href={historyLink}>
             <b>My History</b>
           </a>

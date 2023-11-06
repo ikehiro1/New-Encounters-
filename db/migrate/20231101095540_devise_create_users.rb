@@ -39,6 +39,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.string :birthday
       t.string :provider #Twitterログイン
       t.integer :role #ログイン時振り分け
+      t.text :history
 
       t.timestamps null: false
     end

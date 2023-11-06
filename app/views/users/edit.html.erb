@@ -1,4 +1,17 @@
 <div class="container">
-  <%= react_component('UsersEdit') %>
  <h1>Users#edit</h1>
+<%= form_with model: @user_data,local: true do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br><br>
+    
+  <%= f.label :email %><br>
+  <%= f.email_field :email %><br><br>
+    
+  <%= f.label :telephone_number %><br>
+  <%= f.telephone_field :telephone_number %><br><br>
+            
+  <%= f.label :history %><br>
+  <%= f.text_field :history %><br><br>
+  <%= f.submit "Update User" ,class: 'btn btn-secondary' %>
+<% end %>
 </div>
