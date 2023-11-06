@@ -20,13 +20,13 @@ function UsersShow(response) {
         )}
         <div className="profile">
           <h1>-My Page-</h1>
-          <div>名前</div>
+          <div>Name</div>
           <p>{userData["name"]}</p>
-          <div>entertainer</div>
+          <div>Entertainer</div>
           <p>{userData["role"]}</p>
-          <div>生年月日</div>
+          <div>Birthday</div>
           <p>{userData["birthday"]}</p>
-          <div>芸歴</div>
+          <div>History</div>
           <p>{userData["history"]}</p>
           <a href={historyLink}>
             <b>My History</b>

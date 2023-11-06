@@ -21,12 +21,13 @@ class UsersController < ApplicationController
 
   def update
     #byebug
-     @user_data = User.find(current_user.id)
-      @user_data.update(user_params)
-      redirect_to user_path(current_user)
+    @user_data = User.find(current_user.id)
+    @user_data.update(user_params)
+    redirect_to user_path(current_user)
   end
 
   def leave
+      @user_data = User.find(current_user.id)
   end
   
   private
