@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :communities, only:[:index,:show,:destroy,:create,:update]
   resources :users, only:[:show,:new,:edit,:update] do
     get 'users/leave'
+    get 'users/destroy'
   end  
   resources :announces, only:[:index,:show,:new,:edit,:update,:destroy]
   
