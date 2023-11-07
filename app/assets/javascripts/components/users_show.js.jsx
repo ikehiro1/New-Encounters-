@@ -1,7 +1,6 @@
 function UsersShow(response) {
     const userData = response["profileData"][0]["user_data"];
     const userId = userData["id"];
-    const historyLink = `/histories/${userId}`;
     const userEditLink = `/users/${userId}/edit`;
     if (sessionStorage.getItem("Animation")) {
       console.log("アニメーション実行済み");
@@ -19,7 +18,7 @@ function UsersShow(response) {
           </div>
         )}
         <div className="profile">
-          <h1>-My Page-</h1>
+          <h1 className="certification__text">-My Page-</h1>
           <div>Name</div>
           <p>{userData["name"]}</p>
           <div>Entertainer</div>
@@ -28,9 +27,6 @@ function UsersShow(response) {
           <p>{userData["birthday"]}</p>
           <div>History</div>
           <p>{userData["history"]}</p>
-          <a href={historyLink}>
-            <b>My History</b>
-          </a>
           <br />
           <a href={userEditLink}>
             <b>My Page Edit</b>
