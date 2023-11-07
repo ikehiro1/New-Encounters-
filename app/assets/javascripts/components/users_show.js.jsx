@@ -18,7 +18,7 @@ function UsersShow(response) {
           </div>
         )}
         <div className="profile">
-          <h1 className="certification__text">-My Page-</h1>
+          <h1>-My Page-</h1>
           <div>Name</div>
           <p>{userData["name"]}</p>
           <div>Entertainer</div>

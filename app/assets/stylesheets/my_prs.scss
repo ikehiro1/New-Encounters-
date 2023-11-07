@@ -1,3 +1,28 @@
 // Place all the styles related to the my_prs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.movie{
+width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 40vh;
+    justify-content: left;
+   &__position{
+    width: 35%;
+    height: 34vh;
+    margin: 0% 5%;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: black;
+    @media (max-width: 800px) {
+    width: 100%;
+   }
+    > p {
+      background-color: #0d579c;
+    }
+    &__elm{
+        height: 30vh;
+        background-color: black;
+    }
+  }
+}

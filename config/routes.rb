@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'users#show'
   
-  resources :my_prs, only:[:index,:show,:new,:edit,:update,:destroy]
+  resources :my_prs, only:[:index,:show,:new,:edit,:update,:destroy,:create]
   resources :histories, only:[:show,:new,:edit,:update,:destroy]
   resources :communities, only:[:index,:show,:destroy,:create,:update]
   resources :users, only:[:show,:new,:edit,:update] do
