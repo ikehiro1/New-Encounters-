@@ -12,7 +12,7 @@ function Footer(response) {
           <li><i className="fa-solid fa-user"></i><span>MYPAGE</span></li>
         </a>
         <a href="/communities">
-          <li><i className="fa-solid fa-user-group"></i><span>COMMUNITIES</span></li>
+          <li><i className="fa-solid fa-comments"></i><span>COMMUNITIES</span></li>
         </a>
         <a href="/announces">
           <li><i className="fa-solid fa-bullhorn"></i><span>ANNOUNCES</span></li>
