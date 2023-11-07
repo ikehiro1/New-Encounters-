@@ -26,9 +26,12 @@
     }
   }
 }
+.history__text{
+  display: inline-flex;
+}
 .delete__text{
   text-align: center;
-  padding: 10%;
+  padding: 5%;
   &__message{
     background: linear-gradient(transparent 50%, #ff4500 100%);
   }

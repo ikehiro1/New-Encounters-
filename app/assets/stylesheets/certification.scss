@@ -32,6 +32,9 @@
   &__login {
     @include actionButtonBase(11%, 3px, 19px, "login");
   }
+  &__destroy {
+    @include actionButtonBase(11%, 3px, 19px, "Delete");
+  }
 }
 
 .buuton__field {

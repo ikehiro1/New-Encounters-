@@ -13,10 +13,9 @@ class UsersController < ApplicationController
 
   def edit
     @user_data = User.find(current_user.id)
-    #user_data = User.find(params[:id])
     @profile_data = [
-        "user_data" => [@user_data][0],
-      ]
+    "user_data" => [@user_data][0],
+    ]
   end
 
   def update
@@ -27,7 +26,13 @@ class UsersController < ApplicationController
   end
 
   def leave
-      @user_data = User.find(current_user.id)
+    @user_data = User.find(current_user.id)
+  end
+  
+  def destroy
+    @user_data = User.find(current_user.id)
+    @user_data.destroy
+    redirect_to new_user_registration_path
   end
   
   private

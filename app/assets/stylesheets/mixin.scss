@@ -13,6 +13,11 @@
     float: left;
   }@else if($certification == "login"){
     text-decoration: none;
+  }@else if($certification == "Delete"){
+    text-decoration: none;
+    background: linear-gradient(45deg,#000000,#DD0000);
+    border: 1px #696969 solid;
+
   }
   &:hover {
     box-shadow: none;

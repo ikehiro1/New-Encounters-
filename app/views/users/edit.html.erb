@@ -1,20 +1,23 @@
 <div class="container">
  <div class="profile">    
-  <h1>-User Edit-</h1>
+  <h1 class="certification__text">-User Edit-</h1>
     <%= form_with model: @user_data,local: true do |f| %>
-      <%= f.label :name %><br>
+      <i class="fa-solid fa-user"></i>
       <%= f.text_field :name %><br><br>
     
-      <%= f.label :email %><br>
+      <i class="fa-solid fa-envelope"></i>
       <%= f.email_field :email %><br><br>
     
-      <%= f.label :telephone_number %><br>
+      <i class="fa-solid fa-phone"></i>
       <%= f.telephone_field :telephone_number %><br><br>
-            
-      <%= f.label :history %><br>
-      <%= f.text_area :history, size: "20x10" %><br><br>
-      <%= f.submit "Update" %>
+      <div class="history__text">     
+      <i class="fa-solid fa-user-pen"></i>
+      <%= f.text_area :history, :placeholder => "芸歴＆自己紹介" %><br><br>
+      </div><br><br>
+      <div class="actions">
+        <%= f.submit "Update", class: "actions__signup" %>
+        <%= link_to "Delete", user_users_leave_path(@user_data.id), class: "actions__destroy" %>
+      </div>
     <% end %>
-    <%= link_to "Delete", user_users_leave_path(@user_data.id) %>
   </div>
 </div>
