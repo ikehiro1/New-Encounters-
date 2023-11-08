@@ -1,3 +1,28 @@
-<%= react_component('AnnouncesNew') %>
-<h1>Announces#new</h1>
-<p>Find me in app/views/announces/new.html.erb</p>
+<div class="container">
+  <div class="profile">
+    <%= react_component('AnnouncesNew') %>
+    <h1>Announces#new</h1>
+    <%= form_with model: @video, local: true do |f| %>
+      <i class="fa-solid fa-user-pen"></i>
+      <%=f.text_field :user_name, size: 36 %><br><br>
+      <div class="long__text">
+      <i class="fa-solid fa-user-pen"></i>
+      <%=f.text_field :title, size: 36 %><br><br>
+      <div class="long__text">
+        <i class="fa-solid fa-pen-fancy"></i>
+        <%=f.text_area :explanation, class: "certification__pr" %>
+      </div><br><br>
+      <span>
+        <i class="fa-solid fa-video"></i>
+        <%=f.file_field :img, accept: 'imag/*' %><br><br>
+      </span>
+      <div class="field">
+        <i class="fa-solid fa-cake-candles certification__birthday__icon"></i>
+        <%= f.date_field :time, autofocus: true, autocomplete: "time", class: "certification__eventtime", :placeholder => "Time" %>
+      </div>
+      <div class="actions">
+        <%=f.submit "Create", class: "actions__signup" %>
+      </div>
+    <% end %>
+  </div>    
+</div>

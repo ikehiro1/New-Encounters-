@@ -3,10 +3,10 @@ class CreateAnnounces < ActiveRecord::Migration[6.1]
     create_table :announces do |t|
       
       t.string :user_name
-      t.datetime :time #開催日時
+      t.string :time #開催日時
       t.text :explanation
       t.string :title
-      t.string :img　#画像や動画を挿しこめる
+      t.string :img #画像や動画を挿しこめる
       t.bigint :user_id
       
       t.timestamps
