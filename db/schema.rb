@@ -42,10 +42,10 @@ ActiveRecord::Schema.define(version: 2023_11_07_064431) do
 
   create_table "announces", force: :cascade do |t|
     t.string "user_name"
-    t.datetime "time"
+    t.string "time"
     t.text "explanation"
     t.string "title"
-    t.string "img　"
+    t.string "img"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

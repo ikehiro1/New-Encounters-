@@ -28,9 +28,11 @@ function UsersShow(response) {
           <div>History</div>
           <p>{userData["history"]}</p>
           <br />
-          <a href={userEditLink}>
-            <b>My Page Edit</b>
-          </a>
+          <div className="actions">
+            <a className="actions__mypr" href={userEditLink}>
+              <b>My Page Edit</b>
+            </a>
+          </div>
         </div>
       </div>
     );

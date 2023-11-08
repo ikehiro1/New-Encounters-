@@ -21,6 +21,13 @@
   &__remember {
     margin: 20px 0px;
   }
+  &__eventtime {
+    width: 140px;
+    margin-right: 55px;
+    &__icon {
+      margin-right: 55px;
+    }
+  }
 }
 .actions {
   width: 100%;
@@ -35,7 +42,14 @@
   &__destroy {
     @include actionButtonBase(11%, 3px, 19px, "Delete");
   }
+  &__mypr {
+     @include actionButtonBase(11%, 3px, 19px, "My Pr");
+  }
+  
 }
+.actions__mypr a:visited{
+  color: white;
+  }
 
 .buuton__field {
   margin: 1%;

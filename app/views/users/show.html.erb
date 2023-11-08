@@ -1,4 +1,8 @@
 <div class="container">
   <%= react_component('UsersShow',{profileData: @profile_data }) %>
-  <%= link_to "My pr", my_prs_path %>
+  <div class="actions">
+    <div class="actions__mypr">
+      <%= link_to "My Pr", my_prs_path %>
+    </div>
+  </div>  
 </div>
