@@ -9,7 +9,7 @@ width: 100%;
     justify-content: left;
    &__position{
     width: 35%;
-    height: 34vh;
+    height: 37vh;
     margin: 0% 5%;
     flex-wrap: wrap;
     text-align: center;
@@ -24,5 +24,11 @@ width: 100%;
         height: 30vh;
         background-color: black;
     }
+  }
+}
+.certification {
+    text-align: center;
+    &__pr {
+    width: 250px;
   }
 }

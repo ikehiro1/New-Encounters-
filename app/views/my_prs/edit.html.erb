@@ -1,3 +1,18 @@
-<%= react_component('MyPrsEdit') %>
-<h1>MyPrs#edit</h1>
-<p>Find me in app/views/my_prs/edit.html.erb</p>
+<div class="container">
+  <div class="profile">
+    <h1 class="certification__text">MyPr Edit</h1>
+      <%= form_with model: @video, method: :patch do |f| %>
+        <i class="fa-solid fa-user-pen"></i>
+        <%= f.text_field :pr_title, size: 36 %><br><br>
+        <i class="fa-solid fa-video"></i>
+        <%= f.file_field :pr_movie %><br><br>
+        <div class="long__text">
+          <i class="fa-solid fa-pen-fancy"></i>
+          <%= f.text_field :pr_explanation, class: "certification__pr" %><br><br>
+        </div><br><br>
+        <div class="actions">
+          <%= f.submit "Update", class: "actions__signup"%>
+        </div>
+      <% end %> 
+  </div>
+</div>
