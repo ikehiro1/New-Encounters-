@@ -1,14 +1,3 @@
 <div class="container">
-  <h1>-My Pr-</h1>
-  <p><%= link_to "New pr", new_my_pr_path %></p>
-  <div class="movie">
-    <% @videos.each do |video| %>
-      <div class="movie__position">
-        <p><%= video.pr_title %></p>r
-        <%= video_tag(video.pr_movie.to_s, class: "movie__position__elm", autoplay: true, muted: true, controls: true) %> 
-        <%#(loop: trueループ再生)(autoplay: true自動再生設定)(muted: true消音設定)(controls: true動画コントローラー表示)%>
-        <p><%= video.pr_explanation %></p>
-      </div>
-    <% end %>
-  </div>
+  <%= react_component('myPrIndex', { videos: @videos}) %>
 </div>

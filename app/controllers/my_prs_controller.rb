@@ -14,12 +14,12 @@ class MyPrsController < ApplicationController
   def create
     @video = MyPr.new(mypr_params)
     @video.save
-    #byebug
     redirect_to my_prs_path
   end
 
   def edit
     @video = MyPr.find(params[:id])
+    #byebug
   end
 
   def update
@@ -29,6 +29,11 @@ class MyPrsController < ApplicationController
   end
 
   def destroy
+     
+     @video = MyPr.find(params[:my_pr_id])
+
+     @video.destroy
+     redirect_to my_prs_path
   end
   
   private
