@@ -1,10 +1,7 @@
 class AnnouncesController < ApplicationController
   def index
-    user_data = User.find(current_user.id)
-    #user_data = User.find(params[:id])
-    @profile_data = [
-        "user_data" => [user_data][0],
-      ]
+    @announce = Announce.new
+    @announces = Announce.all
   end
 
   def show
@@ -15,8 +12,9 @@ class AnnouncesController < ApplicationController
   end
   
   def create
-    @announce = Announces.new(announces_params)
-    @announce.save
+    @announce = Announce.new(announces_params)
+    @announce.save!
+    #byebug
     redirect_to announces_path
   end
 
@@ -31,7 +29,7 @@ class AnnouncesController < ApplicationController
   
   private
   def announces_params
-    params.require(:announces).permit(:title, :explanation, :time, :img, :user_name).merge(user_id: current_user.id)
+    params.require(:announce).permit(:title, :explanation, :time, :img, :user_name).merge(user_id: current_user.id)
   end
 
 end

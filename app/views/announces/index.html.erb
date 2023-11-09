@@ -1,5 +1,15 @@
 <div class="container">
   <%= react_component('AnnouncesIndex') %>
   <h1>Announces#index</h1>ああ
-  <p>Find me in app/views/announces/index.html.erb</p>
+    <div class="movie">
+    <% @announces.each do |announce| %>
+      <div>
+        <%= announce.user_name %>
+        <%= announce.title%>
+        <%= announce.explanation %>
+        <%= announce.img %>
+        <%= announce.time %>
+      </div>
+    <% end %>
+  </div>
 </div>
