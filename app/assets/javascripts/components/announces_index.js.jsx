@@ -1,16 +1,22 @@
-function UsersLeave(response) {
-  const userData = response["profileData"][0]["user_data"];
-  const userId = userData["id"];
-  const userShowLink = `/users/${userId}/show`;
-}
-
-function AnnouncesIndex(props) {
+function announcesIndex(response) {
+const announces = Array.from(response["announces"]);
+console.log(announces)
   return (
-    <React.Fragment>
-    <p>{userData["name"]}</p>
-    </React.Fragment>
+    <div>
+    <h1>-Announces Index-</h1>
+      <div className="movie">
+        {announces.map((announce, index) => (
+          <div className="movie__position" key={index}>
+            <p>{announce["user_name"]}</p>
+            <p>{announce["title"]}</p>
+            <announce
+              src={announce["img"]["url"]}
+            />  
+            <p>{announce["explanation"]}</p>
+            <p>{announce["time"]}</p>
+          </div>
+          ))}
+      </div>
+    </div>
   );
 }
-
-
-

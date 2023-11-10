@@ -1,5 +1,5 @@
 <div class="container">
-  <%= react_component('AnnouncesIndex') %>
+  
   <h1>Announces#index</h1>ああ
     <div class="movie">
     <% @announces.each do |announce| %>
@@ -7,9 +7,10 @@
         <%= announce.user_name %>
         <%= announce.title%>
         <%= announce.explanation %>
-        <%= announce.img %>
+        <%= image_tag announce.img, size: "100x100" %>
         <%= announce.time %>
       </div>
     <% end %>
   </div>
 </div>
+<%#= react_component('announcesIndex', { announces: @announces}) %>
