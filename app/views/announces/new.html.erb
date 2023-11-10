@@ -4,22 +4,22 @@
       <%= form_with model: @announce, local: true do |f| %>
       <i class="fa-solid fa-user"></i>
       <%=f.text_field :user_name, size: 36, :placeholder => "Name" %><br><br>
+      
       <div class="long__text">
       <i class="fa-solid fa-user-pen"></i>
       <%=f.text_field :title, size: 36, :placeholder => "title" %>
       </div><br><br>
+      
       <div class="long__text">
         <i class="fa-solid fa-pen-fancy"></i>
         <%=f.text_area :explanation, :placeholder => "text", class: "certification__pr" %>
       </div><br><br>
+      
       <span>
         <i class="fa-solid fa-image"></i>
         <%=f.file_field :img, accept: 'imag/*' %>
       </span><br><br>
-      <div class="field">
-        <i class="fa-regular fa-calendar-days certification__birthday__icon"></i>
-        <%= f.date_field :time, autofocus: true, autocomplete: "time", class: "certification__eventtime", :placeholder => "Time" %>
-      </div><br><br>
+  
       <div class="actions">
         <%=f.submit "Create", class: "actions__signup" %>
       </div>

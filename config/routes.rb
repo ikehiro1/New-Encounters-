@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     get 'users/leave'
     get 'users/destroy'
   end  
-  resources :announces
+  resources :announces, only:[:index,:show,:new,:edit,:update,:create] do
+    get 'destroy'
+  end
   
   delete '/my_prs/:id', to: 'my_prs#destroy', as: 'delete_my_pr'
   get 'announces/index_all'

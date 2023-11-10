@@ -1,3 +1,25 @@
-<%= react_component('AnnouncesEdit') %>
-<h1>Announces#edit</h1>
-<p>Find me in app/views/announces/edit.html.erb</p>
+<div class="container">
+  <div class="profile">
+    <h1 class="certification__text">-Announces Edit-</h1>
+    <%= form_with model: @announce, method: :patch do |f| %>
+      <i class="fa-solid fa-user"></i>
+      <%= f.text_field :user_name, size: 36 %><br><br>
+      
+      <i class="fa-solid fa-user-pen"></i>
+      <%= f.text_field :title, size: 36 %><br><br>
+      
+      <i class="fa-solid fa-image"></i>
+      <%= f.file_field :img %><br><br>
+      
+      <div class="long__text">
+        <i class="fa-solid fa-pen-fancy"></i>
+        <%= f.text_area :explanation, class: "certification__pr" %>
+      </div><br><br>
+      
+      <div class="actions">
+        <%= f.submit "Update", class: "actions__signup"%>
+      </div>
+    <% end %>
+    <%= link_to "Delete", announce_destroy_path(@announce),  method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>

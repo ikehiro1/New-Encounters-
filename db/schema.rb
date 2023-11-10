@@ -92,9 +92,9 @@ ActiveRecord::Schema.define(version: 2023_11_07_064431) do
     t.string "password"
     t.string "telephone_number"
     t.string "birthday"
-    t.string "provider"
     t.integer "role"
     t.text "history"
+    t.string "user_img"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true

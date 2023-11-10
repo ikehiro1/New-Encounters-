@@ -1,14 +1,15 @@
 function UsersShow(response) {
     const userData = response["profileData"][0]["user_data"];
     const userId = userData["id"];
+    console.log(userData);
     const userEditLink = `/users/${userId}/edit`;
     if (sessionStorage.getItem("Animation")) {
-      console.log("アニメーション実行済み");
     } else {
       setTimeout(() => {
           sessionStorage.setItem("Animation", "Already");
       },1500)
     }
+    const no_image = "../images/no_image.jpg";
   
     return (
       <div>
@@ -19,6 +20,11 @@ function UsersShow(response) {
         )}
         <div className="profile">
           <h1>-My Page-</h1>
+          
+          <div>
+            <img src={no_image}/>
+          </div>
+          
           <div>Name</div>
           <p>{userData["name"]}</p>
           <div>Entertainer</div>

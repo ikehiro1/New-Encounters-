@@ -34,9 +34,7 @@ class MyPrsController < ApplicationController
   end
 
   def destroy
-     
      @video = MyPr.find(params[:my_pr_id])
-
      @video.destroy
      redirect_to my_prs_path
   end

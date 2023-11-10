@@ -19,12 +19,19 @@ class AnnouncesController < ApplicationController
   end
 
   def edit
+    @announce = Announce.find(params[:id])
   end
 
   def update
+    @announce = Announce.find(params[:id])
+    @announce.update(announces_params)
+    redirect_to announces_path
   end
 
   def destroy
+     @announce = Announce.find(params[:id])
+     @announce.destroy
+     redirect_to announces_path
   end
   
   private
