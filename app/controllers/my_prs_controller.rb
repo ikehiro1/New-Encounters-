@@ -1,5 +1,10 @@
 class MyPrsController < ApplicationController
   def index
+    user_data = User.find(current_user.id)
+    #user_data = User.find(params[:id])
+    @profile_data = [
+        "user_data" => [user_data][0],
+      ]
     @video = MyPr.new
     @videos = MyPr.all
   end
@@ -18,8 +23,8 @@ class MyPrsController < ApplicationController
   end
 
   def edit
-    @video = MyPr.find(params[:id])
     #byebug
+    @video = MyPr.find(params[:id])
   end
 
   def update
