@@ -3,6 +3,13 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .profile{
     text-align: center;
+   &__index{
+     margin: 0 20%;
+     background-color: red;
+     &__a{
+       padding: 50px;
+     }
+  }
 }
 .opening-animation {
   position: absolute;

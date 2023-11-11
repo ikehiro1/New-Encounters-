@@ -2,8 +2,6 @@
   <div class="profile">
     <h1 class="certification__text">-Announces Edit-</h1>
     <%= form_with model: @announce, method: :patch do |f| %>
-      <i class="fa-solid fa-user"></i>
-      <%= f.text_field :user_name, size: 36 %><br><br>
       
       <i class="fa-solid fa-user-pen"></i>
       <%= f.text_field :title, size: 36 %><br><br>
@@ -15,7 +13,6 @@
         <i class="fa-solid fa-pen-fancy"></i>
         <%= f.text_area :explanation, class: "certification__pr" %>
       </div><br><br>
-      
       <div class="actions">
         <%= f.submit "Update", class: "actions__signup"%>
       </div>

@@ -19,25 +19,29 @@ function UsersShow(response) {
           </div>
         )}
         <div className="profile">
-          <h1>-My Page-</h1>
-          
-          <div>
-            <img src={no_image}/>
-          </div>
-          
-          <div>Name</div>
-          <p>{userData["name"]}</p>
-          <div>Entertainer</div>
-          <p>{userData["role"]}</p>
-          <div>Birthday</div>
-          <p>{userData["birthday"]}</p>
-          <div>History</div>
-          <p>{userData["history"]}</p>
-          <br />
-          <div className="actions">
-            <a className="actions__mypr" href={userEditLink}>
-              <b>My Page Edit</b>
-            </a>
+          <div className="profile">
+            <h1>-My Page-</h1>
+            <div className="profile__index">
+            <div>
+              <img src={no_image}/>
+            </div>
+              <div>
+                <div>Name</div>
+                <p>{userData["name"]}</p>
+                <div>Entertainer</div>
+                <p>{userData["role"]}</p>
+                <div>Birthday</div>
+                <p>{userData["birthday"]}</p>
+                <div>History</div>
+                  <div　className="profile__history">{userData["history"]}</div>
+                <br />
+              </div>
+            </div>
+            <div className="actions">
+              <a className="actions__mypr" href={userEditLink}>
+                <b>My Page Edit</b>
+              </a>
+            </div>
           </div>
         </div>
       </div>

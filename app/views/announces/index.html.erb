@@ -1,16 +1,14 @@
 <div class="container">
   
-  <h1>Announces#index</h1>ああ
+  <h1>Announces#index</h1>
     <div class="movie">
     <% @announces.each do |announce| %>
       <div>
-        <%= announce.user_name %>
-        <%= announce.title%>
-        <%= announce.explanation %>
-        <%= image_tag announce.img, size: "100x100" %>
-        <%= announce.time %>
+        <div><%= announce.title%></div>
+        <div><%= image_tag announce.img, size: "100x100" %></div>
+        <div><%= announce.explanation %></div>
+        <div><%= link_to "edit", edit_announce_path(announce.id)%></div>
       </div>
     <% end %>
   </div>
 </div>
-<%#= react_component('announcesIndex', { announces: @announces}) %>

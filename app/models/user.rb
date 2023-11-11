@@ -6,9 +6,10 @@ class User < ApplicationRecord
          
   has_many :announces
   has_many :histories
-  has_many :my_prs
+  has_many :my_prs, dependent: :destroy
   has_many :rooms
   has_many :chats, through: :chat_rooms
+  has_many :likes, dependent: :destroy
 
   enum role: {役者:0, アーティスト:1, タレント:2, 芸人:3}
   

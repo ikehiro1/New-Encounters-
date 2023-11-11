@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   resources :my_prs, only:[:index,:show,:new,:edit,:update,:create] do
     get 'destroy'
+    resource :likes, only:[:create, :destroy]
   end
   resources :histories, only:[:show,:new,:edit,:update,:destroy]
   resources :communities, only:[:index,:show,:destroy,:create,:update]

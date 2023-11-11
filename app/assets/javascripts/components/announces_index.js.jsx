@@ -1,5 +1,5 @@
 function announcesIndex(response) {
-const announces = Array.from(response["announces"]);
+const announces = response(["announces"]);
 console.log(announces)
   return (
     <div>
@@ -9,9 +9,7 @@ console.log(announces)
           <div className="movie__position" key={index}>
             <p>{announce["user_name"]}</p>
             <p>{announce["title"]}</p>
-            <announce
-              src={announce["img"]["url"]}
-            />  
+             
             <p>{announce["explanation"]}</p>
             <p>{announce["time"]}</p>
           </div>

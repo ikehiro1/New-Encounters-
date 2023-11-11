@@ -1,7 +1,7 @@
 class AnnouncesController < ApplicationController
   def index
-    @announce = Announce.new
     @announces = Announce.all
+    #byebug
   end
 
   def show
@@ -9,6 +9,7 @@ class AnnouncesController < ApplicationController
 
   def new
     @announce = Announce.new
+    
   end
   
   def create
