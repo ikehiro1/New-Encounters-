@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .movie{
-width: 100%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     min-height: 40vh;
@@ -35,4 +35,7 @@ width: 100%;
     &__pr {
     width: 250px;
   }
+}
+button{
+    margin: 5% 2%;
 }

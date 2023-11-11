@@ -6,7 +6,7 @@ class CreateMyPrs < ActiveRecord::Migration[6.1]
       t.text :pr_explanation
       t.string :pr_movie #gem 'carrierwave'で動画投稿も可
       t.bigint :user_id
-
+      
       t.timestamps
     end
   end

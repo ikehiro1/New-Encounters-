@@ -1,13 +1,8 @@
 class MyPrsController < ApplicationController
-  def index
-    user_data = User.find(current_user.id)
-    #user_data = User.find(params[:id])
-    @profile_data = [
-        "user_data" => [user_data][0],
-      ]
-    @video = MyPr.new
-    @videos = MyPr.all
-  end
+def index
+  @videos = MyPr.all
+  @created_user_name = @videos.map { |video| video.user.name }
+end
 
   def show
   end
