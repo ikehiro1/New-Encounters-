@@ -5,7 +5,7 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    min-height: 40vh;
+    min-height: 115vh; //40
     justify-content: left;
    &__position{
     width: 35%;
@@ -27,7 +27,11 @@
    &__title{
        display: flow;
        background-color: #0d579c;
+       color: black;
    }    
+      .movie__position__title a:visited{
+      color: white;
+  }
   }
 }
 .certification {
@@ -37,5 +41,9 @@
   }
 }
 button{
-    margin: 5% 2%;
+    background-color: black;
+    color: white;
+    padding: 3px 1%;
+    border: 1px #696969 solid;
+    margin: 10px;
 }

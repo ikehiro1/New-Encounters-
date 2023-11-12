@@ -9,19 +9,18 @@ function myPrIndex(response) {
   
   return (
     <div>
-      <h1>-My Pr-</h1>
-      <a href="/my_prs/new">New pr</a>
-      <div>
-        <button onClick={notMyCreated}>Switching</button>
-        
-      </div>
+      <h1>-Pr Movie-</h1>
+      <a className="image__position__button" href="/my_prs/new">New pr</a>
+    
+        <button onClick={notMyCreated}><i class="fa-solid fa-rotate"></i></button>
+      
       <div className="movie">
         {videos.map((video, index) => {
           if (currentUser["id"] === video["user_id"]) {
             return (
               <div className="movie__position" key={index}>
                 <div className="movie__position__title">
-                  <a href={`/my_prs/${video["id"]}/edit`}>{video["pr_title"]}</a>
+                  <strong><a href={`/my_prs/${video["id"]}/edit`}>{video["pr_title"]}</a></strong>
                 </div>
                 <video
                   src={video["pr_movie"]["url"]}
