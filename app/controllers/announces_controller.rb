@@ -5,6 +5,7 @@ class AnnouncesController < ApplicationController
   end
 
   def show
+    @announce = Announce.find(params[:id])
   end
 
   def new
@@ -14,13 +15,13 @@ class AnnouncesController < ApplicationController
   
   def create
     @announce = Announce.new(announces_params)
-    @announce.save!
-    #byebug
+    @announce.save
     redirect_to announces_path
   end
 
   def edit
     @announce = Announce.find(params[:id])
+    @user = current_user.id
   end
 
   def update
@@ -30,7 +31,8 @@ class AnnouncesController < ApplicationController
   end
 
   def destroy
-     @announce = Announce.find(params[:id])
+     #byebug
+     @announce = Announce.find(params[:announce_id])
      @announce.destroy
      redirect_to announces_path
   end

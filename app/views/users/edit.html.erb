@@ -2,19 +2,15 @@
  <div class="profile">
   <h1 class="certification__text">-User Edit-</h1>
     <%= form_with model: @user_data,local: true do |f| %>
-    　<span>
-        <i class="fa-solid fa-image"></i>
-        <%=f.file_field :img, accept: 'imag/*' %>
-      </span><br><br>
-      
+
+      <i class="fa-solid fa-image"></i>
+      <%= f.file_field :user_img %><br><br>
+
       <i class="fa-solid fa-user"></i>
       <%= f.text_field :name, size: 36 %><br><br>
       
       <i class="fa-solid fa-envelope"></i>
       <%= f.email_field :email, size: 36 %><br><br>
-      
-      <i class="fa-solid fa-phone"></i>
-      <%= f.telephone_field :telephone_number, size: 36 %><br><br>
       
       <div class="long__text">     
       <i class="fa-solid fa-user-pen"></i>

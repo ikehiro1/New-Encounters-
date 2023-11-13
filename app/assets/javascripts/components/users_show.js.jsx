@@ -3,14 +3,16 @@ function UsersShow(response) {
     const userId = userData["id"];
     console.log(userData);
     const userEditLink = `/users/${userId}/edit`;
-    if (sessionStorage.getItem("Animation")) {
+   if (sessionStorage.getItem("Animation")) {
     } else {
-      setTimeout(() => {
-          sessionStorage.setItem("Animation", "Already");
-      },1500)
+    if (sessionStorage.getItem("Animation")) {
+    setTimeout(() => {
+      if (!sessionStorage.getItem("Animation")) {
+            sessionStorage.setItem("Animation", "Already");
+          }
+        }, 1500);
+      }
     }
-    const no_image = "../images/no_image.jpg";
-  
     return (
       <div>
         {!sessionStorage.getItem("Animation") && (
@@ -22,9 +24,6 @@ function UsersShow(response) {
           <div className="profile">
             <h1>-My Page-</h1>
             <div className="profile__index">
-            <div>
-              <img src={no_image}/>
-            </div>
               <div>
                 <div>Name</div>
                 <p>{userData["name"]}</p>

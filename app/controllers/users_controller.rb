@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   def show
-    user_data = User.find(current_user.id)
+    #user_data = User.find(current_user.id)
     #user_data = User.find(params[:id])
-    @profile_data = [
-        "user_data" => [user_data][0],
-      ]
+    #@profile_data = [
+    #    "user_data" => [user_data][0],
+    #  ]
+    @user_data = User.find(current_user.id)
   end
 
   def new
@@ -19,9 +20,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    #byebug
     @user_data = User.find(current_user.id)
     @user_data.update(user_params)
+    #byebug
     redirect_to user_path(current_user)
   end
 
@@ -37,6 +38,6 @@ class UsersController < ApplicationController
   
   private
   def user_params
-   params.require(:user).permit(:name, :email, :telephone_number, :history)
+   params.require(:user).permit(:name, :email, :telephone_number, :history, :user_img)
   end
 end

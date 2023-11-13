@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :rooms
   has_many :chats, through: :chat_rooms
   has_many :likes, dependent: :destroy
+  has_one_attached :user_img
 
   enum role: {役者:0, アーティスト:1, タレント:2, 芸人:3}
   

@@ -3,12 +3,10 @@ Rails.application.routes.draw do
   root to: 'users#show'
   
   resources :my_prs, only:[:index,:show,:new,:edit,:update,:create] do
-    get 'destroy'
-    resource :likes, only:[:create, :destroy]
-  end
+    get 'destroy'  end
   resources :histories, only:[:show,:new,:edit,:update,:destroy]
   resources :communities, only:[:index,:show,:destroy,:create,:update]
-  resources :users, only:[:show,:new,:edit,:update] do
+  resources :users, only:[:show,:new,:edit,:update,] do
     get 'users/leave'
     get 'users/destroy'
   end  

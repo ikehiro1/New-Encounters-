@@ -2,6 +2,7 @@ class MyPrsController < ApplicationController
 def index
   @videos = MyPr.all
   @created_user_name = @videos.map { |video| video.user.name }
+  #byebug
 end
 
   def show
@@ -13,8 +14,11 @@ end
   
   def create
     @video = MyPr.new(mypr_params)
-    @video.save
-    redirect_to my_prs_path
+    if @video.save
+       redirect_to my_prs_path
+    else
+      redirect_to request.referer
+    end
   end
 
   def edit
@@ -24,8 +28,11 @@ end
 
   def update
     @video = MyPr.find(params[:id])
-    @video.update(mypr_params)
-    redirect_to my_prs_path
+    if @video.update(mypr_params)
+       redirect_to my_prs_path
+    else
+      redirect_to request.referer
+    end  
   end
 
   def destroy

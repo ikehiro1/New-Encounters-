@@ -1,5 +1,24 @@
 <div class="container">
   <div class="profile">
-    <%= react_component('myPrIndex', { currentUser: current_user, videos: @videos, createdUserName:  @created_user_name }) %>
+    <h1>-Movie-</h1>
+    <div class="actions">
+      <div class="actions__mypr">
+        <p><%= link_to "New pr", new_my_pr_path %></p>
+      </div>
+    </div>
+    <div class="movie">
+      <% @videos.each do |video| %>
+        <div class="movie__position">
+          <p><%= video.pr_title %></p>
+          <%= video_tag(video.pr_movie.to_s, class: "movie__position__elm", loop: false, autoplay: false, muted: true, controls: true) %> 
+          <%#(loop: trueループ再生)(autoplay: true自動再生設定)(muted: true消音設定)(controls: true動画コントローラー表示)%>
+          <p><%= video.pr_explanation %></p>
+          <% if video.user.id === current_user.id %>
+            <div><%= link_to "Edit", edit_my_pr_path(video.id), class: "image__position__button"%></div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
+<%#= react_component('myPrIndex', { currentUser: current_user, videos: @videos, createdUserName:  @created_user_name }) %>

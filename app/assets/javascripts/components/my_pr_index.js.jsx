@@ -3,8 +3,8 @@ function myPrIndex(response) {
   const currentUser = response["currentUser"];
   const createdUserName = response["createdUserName"];
   const notMyCreated = () => {
-    const notMyCreated = document.getElementById("notMyCreated");
-    notMyCreated.classList.toggle("hide")
+　 const notMyCreatedElement = document.getElementById("notMyCreated");
+   notMyCreatedElement.classList.toggle("hide");
   };
   
   return (
