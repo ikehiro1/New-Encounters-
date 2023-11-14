@@ -3,7 +3,7 @@
     <h1>Announces#show</h1>
     <div><%= @announce.title%></div>
       <% if @announce.img.attached? %>
-        <div><%= image_tag announce.img, size: "400x400" %></div>
+        <div><%= image_tag @announce.img, size: "400x400" %></div>
       <% else %>
         <div><%= image_tag "no_image.jpg", size: "400x400" %></div>
       <% end %>  

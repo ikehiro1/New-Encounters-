@@ -13,4 +13,5 @@ Rails.start()
 ActiveStorage.start()
 
  
-apple = document.querySelector("#app")
+
+
