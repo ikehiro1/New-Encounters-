@@ -40,6 +40,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.integer :role #ログイン時振り分け
       t.text :history
       t.string :user_img
+      t.integer :sender_id
 
       t.timestamps null: false
     end
