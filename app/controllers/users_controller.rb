@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
   def show
     @user_data = User.find(current_user.id)
+    
+    #@user = User.find(params[:id])
+    #@following_users = @user.following_users.to_a
+    #@follower_users = @user.follower_users.to_a
+    
+    #@profile = User.find(params[:id])
   end
 
   def new
@@ -31,6 +37,15 @@ class UsersController < ApplicationController
     redirect_to new_user_registration_path
   end
   
+  def follows
+    user = User.find(params[:id])
+    @users = user.following_users
+  end
+  
+  def followers
+    user = User.find(params[:id])
+    @user = user.follower_users
+  end
   private
   def user_params
    params.require(:user).permit(:name, :email, :telephone_number, :history, :user_img)
