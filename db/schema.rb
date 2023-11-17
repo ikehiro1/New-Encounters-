@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_11_15_005135) do
+ActiveRecord::Schema.define(version: 2023_11_17_063648) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -51,16 +51,18 @@ ActiveRecord::Schema.define(version: 2023_11_15_005135) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "chat_rooms", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "chats", force: :cascade do |t|
     t.string "community_name"
     t.string "chat_summray"
     t.bigint "user_id"
     t.bigint "room_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "communities", force: :cascade do |t|
+    t.string "content"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -86,6 +88,13 @@ ActiveRecord::Schema.define(version: 2023_11_15_005135) do
     t.text "pr_explanation"
     t.string "pr_movie"
     t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
