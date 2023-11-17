@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     get 'destroy'  
     end
   resources :histories, only:[:show,:new,:edit,:update,:destroy]
-  resources :communities, only:[:index,:show,:destroy,:create,:update]
+  resources :communities, only:[:index,:show,:create,:update] do
+    get 'destroy'
+  end
   resources :users, only:[:show,:new,:edit,:update] do
     member do 
       get :follows, :followers

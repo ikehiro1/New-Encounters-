@@ -8,10 +8,13 @@ class CommunitiesController < ApplicationController
   end
 
   def destroy
+     @community = Community.find(params[:community_id])
+     #byebug
+     @community.destroy
+     redirect_to request.referer
   end
 
   def create
-    #byebug
     @community = Community.new(community_params)
     @community.save
     redirect_to communities_path
@@ -22,6 +25,6 @@ class CommunitiesController < ApplicationController
   
   private
   def community_params
-    params.require(:community).permit(:content, :user_id)
+    params.require(:community).permit(:content).merge(user_id: current_user.id)
   end
 end
