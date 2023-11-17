@@ -1,3 +1,13 @@
-<%= react_component('CommunitiesIndex') %>
-<h1>Communities#index</h1>
-<p>Find me in app/views/communities/index.html.erb</p>
+<div class="container">
+  <div class="profile">
+      <h1>Time Line</h1>
+      <% @communities.each do |community| %>
+        <%= community.content %>
+      <% end %>
+      
+      <%= form_with model: @community, local: true do |f| %>
+        <%= f.text_field :content %>
+      <%= f.submit "Create" %>
+      <% end %>
+  </div>
+</div>
