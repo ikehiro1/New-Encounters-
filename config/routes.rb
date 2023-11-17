@@ -2,24 +2,20 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'users#show'
   
-  resources :my_prs, only:[:index,:show,:new,:edit,:update,:create] do
+  resources :my_prs, only:[:index,:show,:new,:edit,:update,:create,:destroy] do
     resource :likes, only:[:create, :destroy]
-    get 'destroy'  
     end
   resources :histories, only:[:show,:new,:edit,:update,:destroy]
-  resources :communities, only:[:index,:show,:create,:update] do
-    get 'destroy'
+  resources :communities, only:[:index,:show,:create,:update,:destroy] do
   end
-  resources :users, only:[:show,:new,:edit,:update] do
+  resources :users, only:[:show,:new,:edit,:update,:destroy] do
     member do 
       get :follows, :followers
     end
       resource :relationships, only: [:create, :destroy]
-      get 'users/leave'
-      get 'users/destroy'
+      get 'leave'
   end  
-  resources :announces, only:[:index,:show,:new,:edit,:update,:create] do
-    get 'destroy'
+  resources :announces, only:[:index,:show,:new,:edit,:update,:create,:destroy] do
   end
   
   delete '/my_prs/:id', to: 'my_prs#destroy', as: 'delete_my_pr'

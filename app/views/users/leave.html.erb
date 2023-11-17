@@ -2,6 +2,6 @@
   <%= react_component('UsersLeave') %>
   <div class="actions">
     <%= link_to "My Page", user_path(@user_data.id), class: "actions__signup" %>
-    <%= link_to "Delete", user_users_destroy_path, method: :get, class: "actions__destroy" %>
+    <%= link_to "Delete", user_session_path, method: :delete,data: { confirm: 'Are you sure?' }, class: "actions__destroy" %>
   </div>  
 </div>

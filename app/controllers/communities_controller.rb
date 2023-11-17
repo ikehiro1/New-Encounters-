@@ -8,7 +8,7 @@ class CommunitiesController < ApplicationController
   end
 
   def destroy
-     @community = Community.find(params[:community_id])
+     @community = Community.find(params[:id])
      #byebug
      @community.destroy
      redirect_to request.referer

@@ -9,7 +9,7 @@
             <%= community.user.name %>
           </div>
           <% if community.user.id === current_user.id %>
-            <%= link_to "Delete",community_destroy_path(community), method: :delete %>
+            <%= link_to "Delete",community_path(community), method: :delete %>
           <% end %>
         <% end %>
       </div>

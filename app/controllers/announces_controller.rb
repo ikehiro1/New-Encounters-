@@ -32,7 +32,7 @@ class AnnouncesController < ApplicationController
 
   def destroy
      #byebug
-     @announce = Announce.find(params[:announce_id])
+     @announce = Announce.find(params[:id])
      @announce.destroy
      redirect_to announces_path
   end

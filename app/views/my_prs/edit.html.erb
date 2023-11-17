@@ -13,7 +13,7 @@
       <div class="actions">
         <%= f.submit "Update", class: "actions__signup"%>
     <% end %>
-        <%= link_to "Delete", my_pr_destroy_path(@video),  method: :delete, class: "actions__destroy", data: { confirm: 'Are you sure?' } %>
+        <%= link_to "Delete",  my_pr_path(@video),  method: :delete, class: "actions__destroy", data: { confirm: 'Are you sure?' } %>
       </div>
   </div>
 </div>
