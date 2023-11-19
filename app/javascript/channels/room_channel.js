@@ -30,6 +30,3 @@ const chatChannel = consumer.subscriptions.create("RoomChannel", {
   }
 });
 
-received: function(data) {
-  return $("#chat").append(data["chat"]);
-}
