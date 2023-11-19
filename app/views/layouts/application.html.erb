@@ -8,9 +8,16 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'my_pr', 'data-turbolinks-track': 'reload'%>
+    <script src="https://kit.fontawesome.com/2296860e67.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
+    <%= react_component('Header') %>
+    <% if user_signed_in? %>
+    <%= react_component('Footer', { currentUserId: current_user.id, logOutValue: form_authenticity_token }) %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

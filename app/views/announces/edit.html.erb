@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="profile">
+    <h1 class="certification__text">-Announces Edit-</h1>
+    <%= form_with model: @announce, method: :patch do |f| %>
+      
+      <i class="fa-solid fa-user-pen"></i>
+      <%= f.text_field :title, size: 36 %><br><br>
+      
+      <i class="fa-solid fa-image"></i>
+      <%= f.file_field :img %><br><br>
+      
+      <div class="long__text">
+        <i class="fa-solid fa-pen-fancy"></i>
+        <%= f.text_area :explanation, class: "certification__pr" %>
+      </div><br><br>
+      <div class="actions">
+        <%= f.submit "Update", class: "actions__signup"%>
+    <% end %>
+        <%= link_to "Delete", announce_path(@announce.id),  method: :delete, class: "actions__destroy", data: { confirm: 'Are you sure?' } %>
+      </div>
+  </div>
+</div>

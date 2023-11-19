@@ -1,0 +1,28 @@
+@mixin actionButtonBase($radius, $py, $px, $certification) {
+  color: white;
+  border-radius: $radius;
+  background: black;
+  border: 1px #696969 solid;
+  box-shadow: 5px 5px 10px gray;
+  padding: $py $px;
+  opacity: 1;
+  transition: 0.5s;
+  float: left;
+  margin: 0 1%;
+  @if ($certification == "signup") {
+    float: left;
+  }@else if($certification == "login"){
+    text-decoration: none;
+  }@else if($certification == "Delete"){
+    text-decoration: none;
+    background: linear-gradient(45deg,#000000,#DD0000);
+    border: 1px #696969 solid;
+  }@else if($certification == "My Pr"){
+    text-decoration: none;
+    border: 1px #696969 solid;
+  }
+  &:hover {
+    box-shadow: none;
+    opacity: 0.7;
+  }
+}

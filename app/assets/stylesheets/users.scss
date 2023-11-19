@@ -1,0 +1,44 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.profile{
+    text-align: center;
+   &__index{
+     margin: 0 20%;
+     &__a{
+       padding: 50px;
+     }
+  }
+}
+.opening-animation {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  font-weight: 400;
+  color: aliceblue;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease-in-out;
+  background-color: #009687;
+  animation: openingAnimation 1s forwards;
+  @keyframes openingAnimation {
+    from {
+      display: flex;
+      height: 100vh;
+    }
+    to {
+      height: 0vh;
+      display: none;
+    }
+  }
+}
+.long__text{
+  display: inline-flex;
+}
+.delete__text{
+  text-align: center;
+  padding: 5%;
+  &__message{
+    background: linear-gradient(transparent 50%, #ff4500 100%);
+  }
+}

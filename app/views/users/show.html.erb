@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="profile">
+    <div class="profile__index">
+      <h1>-My Page-</h1>
+      <% if @user_data.user_img.attached? %>
+        <div><%= image_tag @user_data.user_img, size: "100x100" %></div>
+      <% else %>
+        <div><%= image_tag "no_image.jpg", size: "100x100" %></div>
+      <% end %>
+      <% [@user_data].each do |user_data| %>
+        <div>Name</div>
+        <div><%= user_data.name %></div>
+        <div>Entertainer</div>
+        <div><%= user_data.role%></div>
+        <div>Birthday</div>
+        <div><%= user_data.birthday %></div>
+        <div>History</div>
+        <div><%= user_data.history %></div>
+      <% end %>
+      <div class="actions">
+        <p><%= link_to "Edit", edit_user_path(@user_data.id), class: "actions__login" %></p>
+        <p><%= link_to "Movie", my_prs_path, class: "actions__login" %></p>
+      </div> 
+    </div>
+  </div>
+</div>

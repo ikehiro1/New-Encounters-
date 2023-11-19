@@ -1,0 +1,56 @@
+@import "mixin";
+.new_user {
+  min-height: 100vh;
+}
+.certification {
+  text-align: center;
+  &__text {
+    font-family: math;
+    margin: 50px 0px;
+  }
+  &__entertainer {
+    width: 209px;
+  }
+  &__birthday {
+    width: 100px;
+    margin-right: 55px;
+    &__icon {
+      margin-right: 55px;
+    }
+  }
+  &__remember {
+    margin: 20px 0px;
+  }
+  &__eventtime {
+    width: 140px;
+    margin-right: 55px;
+    &__icon {
+      margin-right: 55px;
+    }
+  }
+}
+.actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  &__signup {
+    @include actionButtonBase(10%, 3px, 20px, "signup");
+  }
+  &__login {
+    @include actionButtonBase(11%, 3px, 19px, "login");
+  }
+  &__destroy {
+    @include actionButtonBase(11%, 3px, 19px, "Delete");
+  }
+  &__mypr {
+     @include actionButtonBase(11%, 3px, 19px, "My Pr");
+  }
+  
+}
+.actions__mypr a:visited{
+  color: white;
+  }
+
+.buuton__field {
+  margin: 1%;
+}

@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="profile">  
+    <h1>Announces#show</h1>
+    <div><%= @announce.title%></div>
+      <% if @announce.img.attached? %>
+        <div><%= image_tag @announce.img, size: "400x400" %></div>
+      <% else %>
+        <div><%= image_tag "no_image.jpg", size: "400x400" %></div>
+      <% end %>
+    <div><%= @announce.explanation %></div>
+    <div class="actions">
+      <%= link_to "announces",announces_path, class: "actions__login" %>
+    </div>
+ </div>   
+</div>

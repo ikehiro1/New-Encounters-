@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="profile">
+    <h1>-Announces-</h1>
+    <div class="actions">
+      <div class="actions__mypr">
+        <%= link_to "New Announce", new_announce_path%>
+      </div>
+    </div>  
+    <div class="image">
+      <% @announces.each do |announce| %>
+        <div class="image__position">
+          <div><%= announce.title%></div>
+          <%= link_to announce_path(announce.id) do %>
+          <% if announce.img.attached? %>
+            <div><%= image_tag announce.img, size: "250x250" %></div>
+          <% else %>
+            <div><%= image_tag "no_image.jpg", size: "250x250" %></div>
+          <% end %>
+          <% end %>  
+          <div><%= announce.explanation %></div>
+          <div><%= announce.user.name %></div>
+          <% if announce.user.id === current_user.id %>
+            <div><%= link_to "Edit", edit_announce_path(announce.id), class: "image__position__button"%></div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%#= react_component('announcesIndex', { announces: @announces}) %>

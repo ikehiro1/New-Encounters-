@@ -1,0 +1,25 @@
+<div class="container">
+ <div class="profile">
+  <h1 class="certification__text">-User Edit-</h1>
+    <%= form_with model: @user_data,local: true do |f| %>
+
+      <i class="fa-solid fa-image"></i>
+      <%= f.file_field :user_img %><br><br>
+
+      <i class="fa-solid fa-user"></i>
+      <%= f.text_field :name, size: 36 %><br><br>
+      
+      <i class="fa-solid fa-envelope"></i>
+      <%= f.email_field :email, size: 36 %><br><br>
+      
+      <div class="long__text">     
+      <i class="fa-solid fa-user-pen"></i>
+      <%= f.text_area :history, :placeholder => "芸歴＆自己紹介", class: "certification__pr" %>
+      </div><br><br>
+      <div class="actions">
+        <%= f.submit "Update", class: "actions__signup" %>
+        <%= link_to "Delete", user_leave_path(@user_data.id), method: :get, class: "actions__destroy" %>
+      </div>
+    <% end %>
+  </div>
+</div>
