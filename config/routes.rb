@@ -10,10 +10,9 @@ Rails.application.routes.draw do
   resources :communities, only:[:index,:show,:create,:update,:destroy] do
   end
   resources :users, only:[:show,:new,:edit,:update,:destroy] do
-    member do 
-      get :follows, :followers
-    end
-      resource :relationships, only: [:create, :destroy]
+    resource :relationships, only: [:create, :destroy]
+      get 'followings' => 'relationships#followings', as: 'followings'
+      get 'followers' => 'relationships#followers', as: 'followers'
       get 'leave'
   end  
   resources :announces, only:[:index,:show,:new,:edit,:update,:create,:destroy] do

@@ -8,13 +8,14 @@
             <%= community.content %>
             <%= community.user.name %>
           </div>
+            
           <% if community.user.id === current_user.id %>
             <%= link_to "Delete",community_path(community), method: :delete %>
           <% end %>
         <% end %>
       </div>
       <%= form_with model: @community, local: true do |f| %>
-        <div>
+        <div><%#class="sendbutton"%>
           <%= f.text_field :content %>
           <%= f.submit "Create" %>
         </div>

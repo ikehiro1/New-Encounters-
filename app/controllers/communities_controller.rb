@@ -2,6 +2,7 @@ class CommunitiesController < ApplicationController
   def index
     @community = Community.new
     @communities = Community.all
+    #byebug
   end
 
   def show
