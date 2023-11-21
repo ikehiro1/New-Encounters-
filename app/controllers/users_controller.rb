@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   def show
     if current_user.present?
-      @user_data = User.find(params[:id])
+      @user_data = User.find(current_user.id)
     else
       redirect_to new_user_session_path
     end 
