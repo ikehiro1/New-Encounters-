@@ -8,28 +8,27 @@
     </div>
     <div class="movie">
       <% @videos.each do |video| %>
-      <% @video = video %>
+        <% @video = video %>
         <div class="movie__position">
           <p><%= video.pr_title %></p>
           <%= video_tag(video.pr_movie.to_s, class: "movie__position__elm", loop: false, autoplay: false, muted: true, controls: true) %> 
           <%#(loop: trueループ再生)(autoplay: true自動再生設定)(muted: true消音設定)(controls: true動画コントローラー表示)%>
           <p><%= video.pr_explanation %></p>
-          <p><%= video.user.name %></p>
+            <%= video.user.name %>
           <% if video.user.id === current_user.id %>
             <div><%= link_to "Edit", edit_my_pr_path(video.id), class: "image__position__button"%></div>
           <% end %>
+          <% if @video.liked_by?(current_user) %>
+            <%= link_to my_pr_likes_path(@video), method: :delete do %>
+              ❤<%= @video.likes.count %>いいね
+            <% end %> 
+          <% else %>
+            <%= link_to my_pr_likes_path(@video), method: :post do %>
+              ❤<%= @video.likes.count %>いいね
+            <% end %>
+          <% end %>  
         </div>
       <% end %>
-      <%# if @video.liked_by?(current_user) %>
-        <%#= link_to my_pr_likes_path(@video), method: :delete do %>
-          ❤<%#= @video.likes.count %>いいね
-        <%# end %> 
-      <%# else %>
-        <%#= link_to my_pr_likes_path(@video), method: :post do %>
-          ❤<%#= @video.likes.count %>いいね
-        <%# end %>
-      <%# end %>  
     </div>
   </div>
 </div>
-<%#= react_component('myPrIndex', { currentUser: current_user, videos: @videos, createdUserName:  @created_user_name }) %>

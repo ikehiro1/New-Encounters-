@@ -77,8 +77,10 @@ ActiveRecord::Schema.define(version: 2023_11_17_063648) do
   create_table "likes", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "my_pr_id", null: false
+    t.integer "announce_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["announce_id"], name: "index_likes_on_announce_id"
     t.index ["my_pr_id"], name: "index_likes_on_my_pr_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
@@ -127,6 +129,7 @@ ActiveRecord::Schema.define(version: 2023_11_17_063648) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "likes", "announces"
   add_foreign_key "likes", "my_prs"
   add_foreign_key "likes", "users"
 end

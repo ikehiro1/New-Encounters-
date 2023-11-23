@@ -1,44 +1,63 @@
 class MyPrsController < ApplicationController
 def index
-  @videos = MyPr.all
-  @created_user_name = @videos.map { |video| video.user.name }
-  #byebug
+  begin
+    @videos = MyPr.all
+    @created_user_name = @videos.map { |video| video.user.name }
+  rescue
+    redirect_to user_path(current_user.id)
+  end
 end
 
-  def show
-  end
-
   def new
-    @video = MyPr.new
+    begin
+      @video = MyPr.new
+    rescue
+      redirect_to my_prs_path
+    end
   end
   
   def create
-    @video = MyPr.new(mypr_params)
+    begin
+      @video = MyPr.new(mypr_params)
     if @video.save
        redirect_to my_prs_path
     else
       redirect_to request.referer
     end
+    rescue
+      redirect_to my_prs_path
+    end
   end
 
   def edit
-    #byebug
-    @video = MyPr.find(params[:id])
+    begin
+      @video = MyPr.find(params[:id])
+    rescue
+      redirect_to my_prs_path
+    end
   end
 
   def update
-    @video = MyPr.find(params[:id])
+    begin
+      @video = MyPr.find(params[:id])
     if @video.update(mypr_params)
        redirect_to my_prs_path
     else
       redirect_to request.referer
     end  
+    rescue
+      redirect_to my_prs_path
+    end
   end
 
   def destroy
-     @video = MyPr.find(params[:id])
-     @video.destroy
-     redirect_to my_prs_path
+    begin
+       @video = MyPr.find(params[:id])
+       @video.destroy
+       redirect_to my_prs_path
+    rescue
+      redirect_to my_prs_path
+    end
   end
   
   private

@@ -1,5 +1,5 @@
 <div class="container certification">
-  <h2 class="certification__text">-Sign up-</h2>
+  <h2 class="certification__text">Sign up-</h2>
   
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
@@ -38,7 +38,7 @@
     
     <div class="field">
       <i class="fa-solid fa-cake-candles certification__birthday__icon"></i>
-      <%= f.date_field :birthday, autofocus: true, autocomplete: "birthday", class: "certification__birthday", :placeholder => "Birthday" %>
+      <%= f.date_field :birthday, autofocus: true, autocomplete: "birthday", class: "certification__birthday", :placeholder => "Birthday", value: f.object.birthday.present? ? f.object.birthday.strftime("%Y-%m-%d") : "" %>
     </div>
     <div class="buuton__field">
       <div class="actions">

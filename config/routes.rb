@@ -3,16 +3,16 @@ Rails.application.routes.draw do
   root to: 'users#show'
   
   resources :my_prs, only:[:index,:show,:new,:edit,:update,:create,:destroy] do
+    #get '/uploads/my_pr/pr_movie/:id/:filename', to: 'my_prs#download_movie', as: 'download_my_pr_movie'
     resource :likes, only:[:create, :destroy]
     end
   resources :histories, only:[:show,:new,:edit,:update,:destroy]
   resources :communities, only:[:index,:show,:create,:update,:destroy] do
   end
   resources :users, only:[:show,:new,:edit,:update,:destroy] do
-    member do 
-      get :follows, :followers
-    end
-      resource :relationships, only: [:create, :destroy]
+    resource :relationships, only: [:create, :destroy]
+      get 'followings' => 'relationships#followings', as: 'followings'
+      get 'followers' => 'relationships#followers', as: 'followers'
       get 'leave'
   end  
   resources :announces, only:[:index,:show,:new,:edit,:update,:create,:destroy] do

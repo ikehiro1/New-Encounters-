@@ -6,5 +6,8 @@ class MyPr < ApplicationRecord
     def liked_by?(user)
       likes.exists?(user_id: user.id)
     end
+    validates :pr_title, presence: true
+    validates :pr_explanation, presence: true
+    validates :pr_movie, presence: true
     
 end

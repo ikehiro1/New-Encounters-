@@ -2,23 +2,23 @@
   <div class="profile">
     <div>
       <div>
-        <h1>Time Line</h1>
+        <h1>-Time Line-</h1>
+         <%= form_with model: @community, local: true do |f| %>
+        <div><%#class="sendbutton"%>
+          <%= f.text_field :content, size: "50" %>
+          <%= f.submit "Create" %>
+        </div>
+      <% end %>
         <% @communities.each do |community| %>
-          <div>
+          <div class='sendr'>
+            <%#= community.user.name %>
             <%= community.content %>
-            <%= community.user.name %>
           </div>
           <% if community.user.id === current_user.id %>
             <%= link_to "Delete",community_path(community), method: :delete %>
           <% end %>
         <% end %>
       </div>
-      <%= form_with model: @community, local: true do |f| %>
-        <div>
-          <%= f.text_field :content %>
-          <%= f.submit "Create" %>
-        </div>
-      <% end %>
     </div>    
   </div>
 </div>

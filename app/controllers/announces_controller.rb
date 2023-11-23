@@ -1,41 +1,67 @@
 class AnnouncesController < ApplicationController
   def index
-    @announces = Announce.all
-    #byebug
+    begin
+       @announces = Announce.all
+    rescue
+      redirect_to user_path(current_user.id)
+    end
   end
 
   def show
-    @announce = Announce.find(params[:id])
+    begin
+      @announce = Announce.find(params[:id])
+    rescue
+      redirect_to announce_path
+    end
   end
 
   def new
-    @announce = Announce.new
-    
+    begin
+      @announce = Announce.new
+    rescue
+      redirect_to announce_path
+    end
   end
   
   def create
-    @announce = Announce.new(announces_params)
-    @announce.save
-    redirect_to announces_path
+    begin
+      @announce = Announce.new(announces_params)
+      @announce.save
+      redirect_to announces_path
+    rescue
+      redirect_to announce_path
+    end
   end
 
   def edit
-    @announce = Announce.find(params[:id])
-    @user = current_user.id
+    begin
+      @announce = Announce.find(params[:id])
+      @user = current_user.id
+    rescue
+      redirect_to announce_path
+    end
   end
 
   def update
-    @announce = Announce.find(params[:id])
-    @announce.update(announces_params)
-    redirect_to announces_path
+    begin
+      @announce = Announce.find(params[:id])
+      @announce.update(announces_params)
+      redirect_to announces_path
+    rescue
+      redirect_to announce_path
+    end
   end
 
   def destroy
-     #byebug
+   begin
      @announce = Announce.find(params[:id])
      @announce.destroy
      redirect_to announces_path
+   rescue
+      redirect_to edit_announce_path
+   end  
   end
+  
   
   private
   def announces_params
