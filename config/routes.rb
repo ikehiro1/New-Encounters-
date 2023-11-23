@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'users#show'
   
   resources :my_prs, only:[:index,:show,:new,:edit,:update,:create,:destroy] do
-    #get '/uploads/my_pr/pr_movie/:id/:filename', to: 'my_prs#download_movie', as: 'download_my_pr_movie'
+    get '/uploads/my_pr/pr_movie/:id/:filename', to: 'my_prs#download_movie', as: 'download_my_pr_movie'
     resource :likes, only:[:create, :destroy]
     end
   resources :histories, only:[:show,:new,:edit,:update,:destroy]
