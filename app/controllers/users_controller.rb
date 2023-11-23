@@ -16,38 +16,64 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user_data = User.find(current_user.id)
-    @profile_data = [
-    "user_data" => [@user_data][0],
-    ]
+    begin
+      @user_data = User.find(current_user.id)
+      @profile_data = [
+      "user_data" => [@user_data][0],
+      ]
+    rescue
+      redirect_to user_path(current_user.id)
+    end
   end
 
   def update
-    @user_data = User.find(current_user.id)
-    @user_data.update(user_params)
-    #byebug
-    redirect_to user_path(current_user)
+    begin
+      @user_data = User.find(current_user.id)
+      if @user_data.update(user_params)
+         redirect_to user_path(current_user.id)
+      else
+       render 'edit'
+      end 
+    rescue
+      redirect_to user_path(current_user.id)
+    end
   end
 
   def leave
-    @user_data = User.find(current_user.id)
+    begin
+      @user_data = User.find(current_user.id)
+    rescue
+      redirect_to user_path(current_user.id)
+    end
   end
   
   def destroy
-    @user_data = User.find(current_user.id)
-    @user_data.destroy
-    redirect_to new_user_registration_path
+    begin
+      @user_data = User.find(current_user.id)
+      @user_data.destroy
+      redirect_to new_user_registration_path
+    rescue
+      redirect_to user_path(current_user.id)
+    end
   end
   
   def follows
-    user = User.find(params[:id])
-    @users = user.following_users
+    begin
+      user = User.find(params[:id])
+      @users = user.following_users
+    rescue
+      redirect_to user_path(current_user.id)
+    end
   end
   
   def followers
-    user = User.find(params[:id])
-    @user = user.follower_users
-  end
+    begin
+      user = User.find(params[:id])
+      @user = user.follower_users
+    rescue
+      redirect_to user_path(current_user.id)
+    end
+  end  
   private
   def user_params
    params.require(:user).permit(:name, :email, :telephone_number, :history, :user_img)

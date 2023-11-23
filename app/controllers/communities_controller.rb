@@ -1,29 +1,33 @@
 class CommunitiesController < ApplicationController
   def index
-    @community = Community.new
-    @communities = Community.all
-    #byebug
-  end
-
-  def show
+    begin
+      @community = Community.new
+      @communities = Community.all
+    rescue
+      redirect_to user_path(current_user.id)
+    end
   end
 
   def destroy
-     @community = Community.find(params[:id])
-     #byebug
-     @community.destroy
-     redirect_to request.referer
+    begin
+      @community = Community.find(params[:id])
+      @community.destroy
+      redirect_to request.referer
+    rescue
+      redirect_to communities_path
+    end
   end
 
   def create
-    @community = Community.new(community_params)
-    @community.save
-    redirect_to communities_path
-  end
+    begin
+      @community = Community.new(community_params)
+      @community.save
+      redirect_to communities_path
+    rescue
+      redirect_to communities_path
+    end
+  end  
 
-  def update
-  end
-  
   private
   def community_params
     params.require(:community).permit(:content).merge(user_id: current_user.id)

@@ -29,4 +29,10 @@ class User < ApplicationRecord
     followings.include?(user)
   end
   
+  #presence(空はNG) uniqueness(一意性) length(文字数制限)
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :password, presence: true
+  validates :telephone_number, presence: true, uniqueness: true, length: { minimum: 10, maximum: 11 }
+  validates :birthday, presence: true
 end
