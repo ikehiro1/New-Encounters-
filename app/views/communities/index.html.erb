@@ -15,7 +15,7 @@
             <%= community.content %>
           </div>
           <% if community.user.id === current_user.id %>
-            <%= link_to "Delete",community_path(community), method: :delete %>
+            <%= link_to "Delete",community_path(community), method: :delete, class: "sendr__delete" %>
           <% end %>
         <% end %>
       </div>
