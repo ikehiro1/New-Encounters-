@@ -13,6 +13,5 @@ class LikesController < ApplicationController
       @my_pr_like.destroy
       redirect_to my_prs_path(my_pr)
      end
-      redirect_to request.referer
     end
 end
