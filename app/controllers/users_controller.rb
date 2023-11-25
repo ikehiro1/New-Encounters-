@@ -6,10 +6,6 @@ class UsersController < ApplicationController
     else
       redirect_to new_user_session_path
     end 
-    #@user = User.find(params[:id])
-    #@followings = @user.followings
-    #@followers = @user.followers
-    
   end
 
   def new
