@@ -14,9 +14,3 @@ community = Community.create!(
     content: "hello",
     user: user,
     )
-my_pr = MyPr.create!(
-    pr_title: "test_title",
-    pr_explanation: "test_explanation_text",
-    pr_movie: "s3://mypr-test-video/mypr_test_video/117041.mov",
-    user: user,
-    )

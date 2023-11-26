@@ -45,14 +45,5 @@ class PrMovieUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
   
-  storage :fog
-
-     def fog_directory
-       'mypr-test-video'
-     end
-
-     def fog_public
-       true
-     end
-
+  
 end
