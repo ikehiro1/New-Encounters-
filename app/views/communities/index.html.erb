@@ -2,9 +2,9 @@
   <div class="profile">
     <div>
       <div>
-        <h1>-Time Line-</h1>
+        <h1 class="certification__title">-Time Line-</h1>
          <%= form_with model: @community, local: true do |f| %>
-        <div><%#class="sendbutton"%>
+        <div>
           <%= f.text_field :content, size: "50" %>
           <%= f.submit "Create" %>
         </div>

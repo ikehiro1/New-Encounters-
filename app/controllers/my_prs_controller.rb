@@ -1,11 +1,7 @@
 class MyPrsController < ApplicationController
 def index
-  begin
     @videos = MyPr.all
     @created_user_name = @videos.map { |video| video.user.name }
-  rescue
-    redirect_to user_path(current_user.id)
-  end
 end
 
   def new
