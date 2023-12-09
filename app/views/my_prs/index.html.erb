@@ -11,7 +11,7 @@
         <% @video = video %>
         <div class="movie__position">
           <p><%= video.pr_title %></p>
-          <%= video_tag(video.pr_movie.to_s, class: "movie__position__elm", loop: false, autoplay: false, muted: true, controls: true) %> 
+          <%= video_tag(video.pr_movie.to_s, class: "movie__position__elm", loop: false, autoplay: true, muted: true, controls: true) %> 
           <%#(loop: trueループ再生)(autoplay: true自動再生設定)(muted: true消音設定)(controls: true動画コントローラー表示)%>
           <p><%= video.pr_explanation %></p>
             <%= video.user.name %>
