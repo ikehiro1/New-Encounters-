@@ -18,7 +18,7 @@ TwitterなどのSNSだと利用者数が多い為、PR動画や告知などが�
 ・同じ目標を持つもの同士、会話をする時。<br>
 ​
 ## 設計書
-後ほど記載します。
+https://docs.google.com/spreadsheets/d/1fn2ui_4G0oRuPQpVIAZAlqE2zn_T1yHqMCQNExk-G3s/edit#gid=0
 ​
 ## 開発環境
 - OS：Linux(CentOS)
